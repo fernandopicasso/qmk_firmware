@@ -15,38 +15,38 @@
  */
 
 #include QMK_KEYBOARD_H
-
+#include <keymap_finnish.h>
 // clang-format off
 enum layers{
-  MAC_BASE,
-  MAC_FN,
+  BASE,
+  NAV,
   WIN_BASE,
   WIN_FN
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
- [MAC_BASE] = LAYOUT_iso_83(
-        KC_ESC,   KC_BRID,  KC_BRIU,  KC_MCTL,  KC_LPAD,  RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  KC_DEL,             KC_MUTE,
-        KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,  KC_EQL,   KC_BSPC,            KC_PGUP,
-        KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,  KC_RBRC,  KC_ENT,             KC_PGDN,
-        KC_CAPS,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,            KC_BSLS,            KC_HOME,
-        KC_LSFT,  KC_NUBS,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,            KC_RSFT,  KC_UP,
-        KC_LCTL,  KC_LOPTN, KC_LCMMD,                               KC_SPC,                                 KC_LCMMD,MO(MAC_FN),KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
+    [BASE] = LAYOUT_iso_83(
+        TG(NAV),  KC_F1,    KC_F2,      KC_F3,    KC_F4,    KC_F5,    KC_F6,      KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,    KC_F12,   KC_DEL,            KC_MUTE,
+        FI_SECT,  FI_1,     FI_2,       FI_3,     FI_4,     FI_5,     FI_6,       FI_7,     FI_8,     FI_9,     FI_0,     FI_PLUS,   FI_ACUT,  KC_BSPC,           KC_PGUP,
+        KC_TAB,   FI_Q,     FI_W,       FI_E,     FI_R,     FI_T,     FI_Y,       FI_U,     FI_I,     FI_O,     FI_P,     FI_ARNG,   FI_DIAE,  KC_ENT,            KC_PGDN,
+        KC_ESC,   FI_A,     FI_S,       FI_D,     FI_F,     FI_G,     FI_H,       FI_J,     FI_K,     FI_L,     FI_ODIA,  FI_ADIA,             FI_QUOT,           KC_HOME,
+        KC_LSFT,  FI_LABK,  FI_Z,       FI_X,     FI_C,     FI_V,     FI_B,       FI_N,     FI_M,     FI_COMM,  FI_DOT,   FI_MINS,             KC_RSFT,  KC_UP,
+        KC_LCTL,  KC_LGUI,  KC_LALT,                                  KC_SPC,                                   KC_RALT,  MO(WIN_FN),KC_RCTL,  KC_LEFT,  KC_DOWN, KC_RGHT),
 
-    [MAC_FN] = LAYOUT_iso_83(
-        KC_TRNS,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_TRNS,            RGB_TOG,
-        KC_TRNS,  BT_HST1,  BT_HST2,  BT_HST3,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,            KC_TRNS,
-        RGB_TOG,  RGB_MOD,  RGB_VAI,  RGB_HUI,  RGB_SAI,  RGB_SPI,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,            KC_TRNS,
-        KC_TRNS,  RGB_RMOD, RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,            KC_TRNS,            KC_END,
-        KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  BAT_LVL,  NK_TOGG,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,            KC_TRNS,  KC_TRNS,
-        KC_TRNS,  KC_TRNS,  KC_TRNS,                                KC_TRNS,                                KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS),
+    [NAV] = LAYOUT_iso_83(
+        TO(BASE), KC_F1,    KC_F2,      KC_F3,    KC_F4,    KC_F5,    KC_F6,      KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,    KC_F12,   KC_DEL,            KC_MUTE,
+        XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,  KC_BSPC,           KC_PGUP,
+        KC_TAB,   XXXXXXX,  C(KC_RGHT), XXXXXXX,  XXXXXXX,  XXXXXXX,  C(KC_C),    XXXXXXX,  TO(BASE), XXXXXXX,  C(KC_V),  XXXXXXX,   XXXXXXX,  KC_ENT,            KC_PGDN,
+        KC_ESC,   XXXXXXX,  XXXXXXX,    C(KC_X),  XXXXXXX,  XXXXXXX,  KC_LEFT,    KC_DOWN,  KC_UP,    KC_RGHT,  XXXXXXX,  XXXXXXX,             XXXXXXX,           KC_HOME,
+        KC_LSFT,  XXXXXXX,  XXXXXXX,    KC_DEL,   XXXXXXX,  XXXXXXX,  C(KC_LEFT), XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,             KC_RSFT,  KC_UP,
+        KC_LCTL,  KC_LGUI,  KC_LALT,                                  XXXXXXX,                                  KC_RALT,  MO(WIN_FN),KC_RCTL,  KC_LEFT,  KC_DOWN, KC_RGHT),
 
     [WIN_BASE] = LAYOUT_iso_83(
         KC_ESC,   KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_DEL,             KC_MUTE,
-        KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,  KC_EQL,   KC_BSPC,            KC_PGUP,
-        KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,  KC_RBRC,  KC_ENT,             KC_PGDN,
-        KC_ESC,   KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,            KC_BSLS,            KC_HOME,
-        KC_LSFT,  KC_NUBS,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,            KC_RSFT,  KC_UP,
+        FI_SECT,  FI_1,     FI_2,     FI_3,     FI_4,     FI_5,     FI_6,     FI_7,     FI_8,     FI_9,     FI_0,     FI_PLUS,  FI_ACUT,  KC_BSPC,            KC_PGUP,
+        KC_TAB,   FI_Q,     FI_W,     FI_E,     FI_R,     FI_T,     FI_Y,     FI_U,     FI_I,     FI_O,     FI_P,     FI_ARNG,  FI_DIAE,  KC_ENT,             KC_PGDN,
+        KC_ESC,   FI_A,     FI_S,     FI_D,     FI_F,     FI_G,     FI_H,     FI_J,     FI_K,     FI_L,     FI_ODIA,  FI_ADIA,            FI_QUOT,            KC_HOME,
+        KC_LSFT,  FI_LABK,  FI_Z,     FI_X,     FI_C,     FI_V,     FI_B,     FI_N,     FI_M,     FI_COMM,  FI_DOT,   FI_MINS,            KC_RSFT,  KC_UP,
         KC_LCTL,  KC_LGUI,  KC_LALT,                                KC_SPC,                                 KC_RALT, MO(WIN_FN),KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
 
     [WIN_FN] = LAYOUT_iso_83(
@@ -60,8 +60,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
-    [MAC_BASE] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
-    [MAC_FN] = {ENCODER_CCW_CW(RGB_VAD, RGB_VAI)},
+    [BASE] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
+    [NAV] = {ENCODER_CCW_CW(RGB_VAD, RGB_VAI)},
     [WIN_BASE] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
     [WIN_FN] = {ENCODER_CCW_CW(RGB_VAD, RGB_VAI)}
 };
