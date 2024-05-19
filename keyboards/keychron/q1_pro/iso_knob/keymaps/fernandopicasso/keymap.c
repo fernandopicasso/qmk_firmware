@@ -66,3 +66,16 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [WIN_FN] = {ENCODER_CCW_CW(RGB_VAD, RGB_VAI)}
 };
 #endif // ENCODER_MAP_ENABLE
+
+// Combos
+const uint16_t PROGMEM ctxmenu_combo[] = {KC_RALT, KC_RCTL, COMBO_END};
+const uint16_t PROGMEM backsp_combo[] = {KC_J, KC_K, COMBO_END};
+const uint16_t PROGMEM del_combo[] = {KC_D, KC_F, COMBO_END};
+
+combo_t key_combos[] = {
+    COMBO(ctxmenu_combo, KC_APP),
+    COMBO(backsp_combo, KC_BSPC),
+    COMBO(del_combo, KC_DEL),
+};
+
+uint16_t COMBO_LEN = sizeof(key_combos) / sizeof(*key_combos);
