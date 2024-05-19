@@ -26,20 +26,20 @@ enum layers{
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT_iso_83(
-        TG(NAV),  KC_F1,    KC_F2,      KC_F3,    KC_F4,    KC_F5,    KC_F6,      KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,    KC_F12,   KC_DEL,            KC_MUTE,
-        FI_SECT,  FI_1,     FI_2,       FI_3,     FI_4,     FI_5,     FI_6,       FI_7,     FI_8,     FI_9,     FI_0,     FI_PLUS,   FI_ACUT,  KC_BSPC,           KC_PGUP,
-        KC_TAB,   FI_Q,     FI_W,       FI_E,     FI_R,     FI_T,     FI_Y,       FI_U,     FI_I,     FI_O,     FI_P,     FI_ARNG,   FI_DIAE,  KC_ENT,            KC_PGDN,
-        KC_ESC,   FI_A,     FI_S,       FI_D,     FI_F,     FI_G,     FI_H,       FI_J,     FI_K,     FI_L,     FI_ODIA,  FI_ADIA,             FI_QUOT,           KC_HOME,
-        KC_LSFT,  FI_LABK,  FI_Z,       FI_X,     FI_C,     FI_V,     FI_B,       FI_N,     FI_M,     FI_COMM,  FI_DOT,   FI_MINS,             KC_RSFT,  KC_UP,
-        KC_LCTL,  KC_LGUI,  KC_LALT,                                  KC_SPC,                                   KC_RALT,  MO(WIN_FN),KC_RCTL,  KC_LEFT,  KC_DOWN, KC_RGHT),
+        KC_ESC,          KC_F1,   KC_F2,      KC_F3,    KC_F4,    KC_F5,    KC_F6,      KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,    KC_F12,   KC_DEL,            KC_MUTE,
+        FI_SECT,         FI_1,    FI_2,       FI_3,     FI_4,     FI_5,     FI_6,       FI_7,     FI_8,     FI_9,     FI_0,     FI_PLUS,   FI_ACUT,  KC_BSPC,           KC_PGUP,
+        KC_TAB,          FI_Q,    FI_W,       FI_E,     FI_R,     FI_T,     FI_Y,       FI_U,     FI_I,     FI_O,     FI_P,     FI_ARNG,   FI_DIAE,  KC_ENT,            KC_PGDN,
+        LT(NAV, KC_ESC), FI_A,    FI_S,       FI_D,     FI_F,     FI_G,     FI_H,       FI_J,     FI_K,     FI_L,     FI_ODIA,  FI_ADIA,             FI_QUOT,           KC_HOME,
+        KC_LSFT,         FI_LABK, FI_Z,       FI_X,     FI_C,     FI_V,     FI_B,       FI_N,     FI_M,     FI_COMM,  FI_DOT,   FI_MINS,             KC_RSFT,  KC_UP,
+        KC_LCTL,         KC_LGUI, KC_LALT,                                  KC_SPC,                                   KC_RALT,  MO(WIN_FN),KC_RCTL,  KC_LEFT,  KC_DOWN, KC_RGHT),
 
     [NAV] = LAYOUT_iso_83(
-        TO(BASE), KC_F1,    KC_F2,      KC_F3,    KC_F4,    KC_F5,    KC_F6,      KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,    KC_F12,   KC_DEL,            KC_MUTE,
-        XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,  KC_BSPC,           KC_PGUP,
-        KC_TAB,   XXXXXXX,  C(KC_RGHT), XXXXXXX,  XXXXXXX,  XXXXXXX,  C(KC_C),    XXXXXXX,  TO(BASE), XXXXXXX,  C(KC_V),  XXXXXXX,   XXXXXXX,  KC_ENT,            KC_PGDN,
-        KC_ESC,   XXXXXXX,  XXXXXXX,    C(KC_X),  XXXXXXX,  XXXXXXX,  KC_LEFT,    KC_DOWN,  KC_UP,    KC_RGHT,  XXXXXXX,  XXXXXXX,             XXXXXXX,           KC_HOME,
-        KC_LSFT,  XXXXXXX,  XXXXXXX,    KC_DEL,   XXXXXXX,  XXXXXXX,  C(KC_LEFT), XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,             KC_RSFT,  KC_UP,
-        KC_LCTL,  KC_LGUI,  KC_LALT,                                  XXXXXXX,                                  KC_RALT,  MO(WIN_FN),KC_RCTL,  KC_LEFT,  KC_DOWN, KC_RGHT),
+        KC_ESC,          KC_F1,    KC_F2,      KC_F3,    KC_F4,    KC_F5,    KC_F6,      KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,    KC_F12,   KC_DEL,            KC_MUTE,
+        XXXXXXX,         XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,  KC_BSPC,           KC_PGUP,
+        KC_TAB,          XXXXXXX,  C(KC_RGHT), XXXXXXX,  XXXXXXX,  XXXXXXX,  C(KC_C),    C(KC_Z),  XXXXXXX,  XXXXXXX,  C(KC_V),  XXXXXXX,   XXXXXXX,  KC_ENT,            KC_PGDN,
+        KC_ESC,          XXXXXXX,  XXXXXXX,    C(KC_X),  XXXXXXX,  XXXXXXX,  KC_LEFT,    KC_DOWN,  KC_UP,    KC_RGHT,  XXXXXXX,  XXXXXXX,             XXXXXXX,           KC_HOME,
+        KC_LSFT,         XXXXXXX,  XXXXXXX,    KC_DEL,   XXXXXXX,  XXXXXXX,  C(KC_LEFT), XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,             KC_RSFT,  KC_UP,
+        KC_LCTL,         KC_LGUI,  KC_LALT,                                  XXXXXXX,                                  KC_RALT,  MO(WIN_FN),KC_RCTL,  KC_LEFT,  KC_DOWN, KC_RGHT),
 
     [WIN_BASE] = LAYOUT_iso_83(
         KC_ESC,   KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_DEL,             KC_MUTE,
